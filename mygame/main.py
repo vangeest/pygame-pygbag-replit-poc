@@ -1,122 +1,50 @@
-# fixme should be auto
-try:
-    import aio.gthread as threading
-except:
-    ...
-
 import asyncio
+
+import time
+
 import pygame
 
+# Try explicitly to declare all your globals at once to facilitate compilation later.
 
-pygame.init()
-
-import module
-
-
-def new_screen(title):
-    global screen
-    pygame.display.set_caption(title)
-    screen = pygame.display.set_mode((640, 360))
-    return screen
-
-
-from threading import Thread
-
-
-# still bugs in that thread model
-class Moving_svg(Thread):
-    async def run(self):
-        global count, screen
-        bmp = pygame.image.load("img/tiger.svg")
-        way = 1
-        while await self:
-            decal = abs(count) % 100
-            if not decal:
-                way = -way
-            screen.blit(bmp, (50 + (way * decal), 50 + (-way * decal)))
-
-
-# ok model
-
-
-def color_background(win):
-    while not aio.exit:
-        win.fill((count % 50, count % 50, count % 50))
-        yield aio
-
-
-def moving_bmp(win):
-    global count
-    bmp = pygame.image.load_basic("img/pygc.bmp")
-    way = 1
-    while not aio.exit:
-        decal = abs(count) % 100
-        if not decal:
-            way = -way
-
-        win.blit(bmp, (50 + (way * decal), 50 + (-way * decal)))
-        yield aio
-
-
-def moving_png(win):
-    global count
-    try:
-        png = pygame.image.load("img/pygc.png")
-    except:
-        print("png support error upgrade SDL_image !")
-        return
-
-    way = 1
-    while not aio.exit:
-        decal = abs(count) % 100
-        if not decal:
-            way = -way
-
-        win.blit(png, (200 + (way * decal), 100 + (way * decal)))
-        yield aio
-
+# Do init here and load any assets right now to avoid lag at runtime or network errors.
 
 async def main():
-    global count, bmp
+  pygame.init()
+  width, height = 800, 600
+  dvdLogoSpeed = [1, 1]
+  backgroundColor = 0, 0, 0
 
-    # using the whole display.
-    win = new_screen("TEST")
+  screen = pygame.display.set_mode((width, height))
 
-    count = 3
+  dvdLogo = pygame.image.load("img/dvd-logo-white.png")
+  dvdLogoRect = dvdLogo.get_rect()
 
-    # still bugs in that thread model
-    # mbmp = Moving_bmp()
+  while True:
 
-    # Green threads are ordered at runtime unlike system threads.
+        # Do your rendering here, note that it's NOT an infinite loop,
+        # and it is fired only when VSYNC occurs
+        # Usually 1/60 or more times per seconds on desktop, maybe less on some mobile devices
 
-    # erase and fill
-    Thread(target=color_background, args=[win]).start()
+        print(f"Hello[{COUNT_DOWN}] from Python")
+        screen.fill(backgroundColor)
 
-    # 1st object to draw
-    Thread(target=moving_png, args=[win]).start()
+        screen.blit(dvdLogo, dvdLogoRect)
+        dvdLogoRect = dvdLogoRect.move(dvdLogoSpeed)
 
-    # 2nd
-    Thread(target=moving_bmp, args=[win]).start()
+        if dvdLogoRect.left < 0 or dvdLogoRect.right > width:
+            dvdLogoSpeed[0] = -dvdLogoSpeed[0]
+        if dvdLogoRect.top < 0 or dvdLogoRect.bottom > height:
+            dvdLogoSpeed[1] = -dvdLogoSpeed[1]
 
-    while True:
-        if count >= 0:
-            print(
-                f"""
+        pygame.display.flip()
+        # time.sleep(10 / 1000)
 
-    Hello[{count}] from Pygame
-
-"""
-            )
-
-        pygame.display.update()
-        await asyncio.sleep(0)
-
-        if count < -60 * 30:  # about * seconds
-            break
-
-        count = count - 1
-
-    pygame.quit()
+        await asyncio.sleep(0)  # Very important, and keep it 0
 
 
+# This is the program entry point:
 asyncio.run(main())
+
+# Do not add anything from here
+# asyncio.run is non-blocking on pygame-wasm
+
