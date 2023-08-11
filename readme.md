@@ -19,6 +19,4 @@ https://pypi.org/project/pygbag/
 - Oeps, the index.html is only shown briefly after Run button had been hit->
   comment out [interpreter] section in .replit file
   change [run] to "python -m http.server"
-- it works, basically, todo:
-- pygbag compile automatically (instead of via shell command)
-- adjust name op repl an repo (typo pybag must be bygbag)
+- automatically rebuild mygame by changing [run] command to "python -mpygbag --build mygame && python -m http.server"
