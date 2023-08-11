@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+taskdb/__init__.py
+taskdb/db.py
+taskdb/task.py
+taskdb.egg-info/PKG-INFO
+taskdb.egg-info/SOURCES.txt
+taskdb.egg-info/dependency_links.txt
+taskdb.egg-info/top_level.txt

@@ -8,6 +8,8 @@ authors = ["Your Name <you@example.com>"]
 python = ">=3.10.0,<3.11"
 numpy = "^1.22.2"
 Flask = "^2.2.0"
+aio-framework = "^0.0.5"
+pygame = "^2.5.0"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"

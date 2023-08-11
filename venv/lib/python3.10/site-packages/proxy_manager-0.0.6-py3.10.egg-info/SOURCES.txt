@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+proxy_manager.egg-info/PKG-INFO
+proxy_manager.egg-info/SOURCES.txt
+proxy_manager.egg-info/dependency_links.txt
+proxy_manager.egg-info/top_level.txt
+proxymanager/__init__.py
+proxymanager/manager.py
+tests/__init__.py
+tests/base_test.py
+tests/context.py
