@@ -5,7 +5,7 @@ This repo runs python with pygame in the browser, using pybag to compile python 
 It uses replit as an IDE for editting, compiling and hosting.
 
 # How to use
-1. Import repo in replit https://replit.com/github/https:/github.com/vangeest/pygame-pygbag-replit-poc
+1. Import repo in replit https://replit.com/github/vangeest/pygame-pygbag-replit-poc
 2. Edit source code of game in mygame/main.
 3. Push run button in replit to rebuild game.
 4. Start mygame by using these links to play the game, with and without debug info
