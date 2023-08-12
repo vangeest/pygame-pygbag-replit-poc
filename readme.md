@@ -16,7 +16,7 @@ It uses replit as an IDE for editting, compiling and hosting.
 - more info on pygbag:
   https://pypi.org/project/pygbag/
 
-# How this repo was constructed:
+# How this repo was constructed
 - Create repl and choose language python
   (Pygame repl adds pygame package and uses vnc to stream grahpics. 
   The pygame package will be automatically added by replit.
@@ -32,3 +32,9 @@ It uses replit as an IDE for editting, compiling and hosting.
   comment out [interpreter] section in .replit file
   change [run] to "python -m http.server"
 - automatically rebuild mygame by changing [run] command to "python -mpygbag --build mygame && python -m http.server"
+- several non essential modifcations
+
+# Github
+- This repl is pushed to https://github.com/vangeest/pygame-pygbag-replit-poc
+- Importing the repl from github to replit doens't go well, because 1) mostly it takes forever, 2) the .replit file (and repl configuration?) is changed during import
+- 
