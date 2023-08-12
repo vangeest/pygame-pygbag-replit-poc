@@ -1,7 +1,5 @@
 import asyncio
 
-import time
-
 import pygame
 
 # Try explicitly to declare all your globals at once to facilitate compilation later.
@@ -19,13 +17,14 @@ async def main():
   dvdLogo = pygame.image.load("img/dvd-logo-white.png")
   dvdLogoRect = dvdLogo.get_rect()
 
+  print("mygame started")
+
   while True:
 
         # Do your rendering here, note that it's NOT an infinite loop,
         # and it is fired only when VSYNC occurs
         # Usually 1/60 or more times per seconds on desktop, maybe less on some mobile devices
 
-        print(f"Hello[{COUNT_DOWN}] from Python")
         screen.fill(backgroundColor)
 
         screen.blit(dvdLogo, dvdLogoRect)
@@ -37,7 +36,6 @@ async def main():
             dvdLogoSpeed[1] = -dvdLogoSpeed[1]
 
         pygame.display.flip()
-        # time.sleep(10 / 1000)
 
         await asyncio.sleep(0)  # Very important, and keep it 0
 
