@@ -1,7 +1,5 @@
 import asyncio
 
-import time
-
 import pygame
 
 # Try explicitly to declare all your globals at once to facilitate compilation later.
@@ -20,7 +18,7 @@ async def main():
   dvdLogoRect = dvdLogo.get_rect()
 
   print("mygame started")
-  
+
   while True:
 
         # Do your rendering here, note that it's NOT an infinite loop,
@@ -38,7 +36,6 @@ async def main():
             dvdLogoSpeed[1] = -dvdLogoSpeed[1]
 
         pygame.display.flip()
-        # time.sleep(10 / 1000)
 
         await asyncio.sleep(0)  # Very important, and keep it 0
 

@@ -1,10 +1,22 @@
 
 
-# replit configurationn for pygbag 
-more info on pygbag:
-https://pypi.org/project/pygbag/
+# pygame with pygbag in replit - proof of concept 
+This repo runs python with pygame in the browser, using pybag to compile python to webassembly. 
+It uses replit as an IDE for editting, compiling and hosting.
 
-# Steps to recreate:
+# How to use
+1. Import repo in replit https://replit.com/github/vangeest/pygame-pygbag-replit-poc
+2. Edit source code of game in mygame/main.
+3. Push run button in replit to rebuild game.
+4. Start mygame by using these links to play the game, with and without debug info
+    https://replit.com/@YOUR_LOGIN/YOUR_REPO/mygame/build/web/index.html#debug <br>
+    https://replit.com/@YOUR_LOGIN/YOUR_REPO/mygame/build/web/index.html <br>
+
+# Documentation
+- more info on pygbag:
+  https://pypi.org/project/pygbag/
+
+# How this repo was constructed:
 - Create repl and choose language python
   (Pygame repl adds pygame package and uses vnc to stream grahpics. 
   The pygame package will be automatically added by replit.
