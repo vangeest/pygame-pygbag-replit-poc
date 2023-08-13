@@ -36,5 +36,12 @@ It uses replit as an IDE for editting, compiling and hosting.
 
 # Github
 - This repl is pushed to https://github.com/vangeest/pygame-pygbag-replit-poc
-- Importing the repl from github to replit doens't go well, because 1) mostly it takes forever, 2) the .replit file (and repl configuration?) is changed during import
-- When using the link to import and "new" is in the link, importing is succesfull, but it changes over 2000! files (packages probably)
+- Imported the repl from github into replit webinterface and with https://replit.com/github/vangeest/pygame-pygbag-replit-poc <br>
+  both didn't go well, because 1) mostly it takes forever, 2) the .replit file (and repl configuration?) is changed during import
+- Imported the repl from github into replit with https://replit.com/new/github/vangeest/pygame-pygbag-replit-poc (notice "/new") <br>
+  importing is most of the time succesfull, but it changes over 2000! files (packages probably)
+- Committed and pushed all changes (over 2000 files for packages replit added for a reason I don't understand)
+- Tried removing venv map from the repo, hoping the poetry packages installer that replit uses would take care of rebuilding venv, but it didn't. Reverted this change.
+
+Status: import is often succesfully completed after 1 minute, other times it takes forever.
+Work aroud: in classrooms, let students not use github. Let them fork a repl in replit, not a repo from github. For now I consider this acceptable.
