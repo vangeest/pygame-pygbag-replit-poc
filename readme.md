@@ -1,11 +1,14 @@
-
+# assignment
+This repo startcode for computer science students of Stanislascollege Westplantsoen havo 4 and vwo 4.
+The description of the assignment can be found at
+[https://github.com/SCW-IN/hv4-game-startcode/blob/main/readme.md](https://github.com/SCW-IN/hv4-game-startcode/blob/main/readme.md)
 
 # pygame with pygbag in replit - proof of concept 
 This repo runs python with pygame in the browser, using pybag to compile python to webassembly. 
 It uses replit as an IDE for editting, compiling and hosting.
 
 # How to use
-1. Import repo in replit [![Run on Repl.it](https://replit.com/badge/github/vangeest/pygame-pygbag-replit-poc)](https://replit.com/new/github/vangeest/pygame-pygbag-replit-poc)
+1. Import repo in replit [![Run on Repl.it]](https://replit.com/badge/github/vangeest/pygame-pygbag-replit-poc)](https://replit.com/new/github/vangeest/pygame-pygbag-replit-poc)
 2. Edit source code of game in mygame/main.
 3. Push run button in replit to rebuild game.
 4. Start mygame by using these links to play the game, with and without debug info
