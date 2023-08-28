@@ -3,25 +3,23 @@ title = "O2. Game"
 weight = 2
 +++
 
-Je gaat je eigen game programmeren!
+Je gaat je eigen breakout game programmeren!
 <!--more-->
 
 ## Opdrachtbeschrijving
 De opdracht in het kort is: Maak in groepjes van twee een breakout spel in python. Je gebruikt de startcode en maakt gebruik van de pygame-library.
 
-{{% expand "Inschrijven" %}}
+### Inschrijven
 Je schrijft je in via het onderstaande formulier dat de docent aanlevert (login met je schoolmail voor toegang). 
 - [wv4in1 GEE lesdag 23/24](https://link) ___aanvullen___
-{{% /expand %}}
 
-{{% expand "Werkwijze" %}}
+### Werkwijze
 - Je maakt deze opdracht in een team van twee personen. De docent geeft aan hoe de teams gemaakt worden.
 - Je krijgt van de docent startcode voor deze opdracht. Je volgt het stappenplan dat je van de docent krijgt.
 - ___hoe samenwerken in 1 repl met 2 personen___ Je maakt code in Replit. Je bewaart steeds de laatste versie van je code in Replit, zodat in de historie van Replit te zien is wanneer je welke code hebt aangepast.
 - Deze opdracht maak je alsof het een echt project is. Je maakt eerst een planning. Daarna kijk je wekelijks of je nog volgens plan loopt. Als je niet volgens plan loopt, dan stuur je bij. In de les word je hiermee geholpen, maar uiteindelijk moet jij zorgen dat je op tijd klaar bent en een goed resultaat oplevert. 
-{{% /expand %}}
 
-{{% expand "Beoordeling" %}}
+### Beoordeling
 Je krijgt één cijfer per team, maar de docent kan hiervan afwijken als teamleden geen gelijkwaardige bijdrage hebben geleverd. 
 
 Het cijfer dat je voor je PO krijgt wordt vanuit verschillende invalshoeken bepaald: 
@@ -59,15 +57,13 @@ Voordat je een cijfer krijgt voor je PO, wordt gekeken of je werk voldoet aan de
 - De planning is vooraf gemaakt, gevolgd en als nodig bijgesteld.
 - De taakverdeling is duidelijk en alle teamleden dragen in gelijke mate bij.
 - Het werk is verdeeld over de weken waarin aan de opdracht kon worden gewerkt, dit blijkt onder andere uit de commits in Github.
-{{% /expand %}}
 
-{{% expand "Inleveren" %}}
+### Inleveren
 - De deadline voor inleveren vind je in de lesplanner.
 - Je kunt vragen stellen tot de laatste les voor de deadline.
 - Je zorgt dat jouw code op dezelfde manier start als de startcode die je aan het begin hebt gekregen (druk op Run in replit). Alle code die jij gemaakt hebt staan in de map mypgame. Dit is tenminste het bestand mygame/main.py. Als je plaatjes gebruikt, dan staan die er ook bij.
 - Uit de versie historie in Replit blijkt wanneer je wat gedaan hebt.
 - De laatste versie van je opdracht die op het moment van de deadline in Replit staat, wordt gebruikt voor de beoordeling.
-{{% /expand %}}
 
 ## Hulpmiddelen
 We gebruiken in deze opdracht de volgende tools:
@@ -79,7 +75,7 @@ Je krijgt van de docent een kopie van de startcode. De startcode kun je alvast b
 ## Stappenplan
 Werk de planning af van boven naar beneden. Vul de planning aan en stel bij terwijl je aan de opdracht werkt.
 
-{{% expand "Basisstappen: uitleg, spelen, afgaan en punten" %}}
+### Basisstappen: uitleg, spelen, afgaan en punten
 1. kaatsende bal
     - Bekijk de startcode
     - Run de startcode
@@ -111,9 +107,8 @@ Werk de planning af van boven naar beneden. Vul de planning aan en stel bij terw
 15. zet je code om naar array's
     - gebruik arrays met de namen blok_x blok_y blok_w en blok_h
 17. maak een heel veld met blokken
-{{% /expand %}}
 
-{{% expand "Uitbreidingsstappen" %}}
+### Uitbreidingsstappen
 1. Uitlegscherm
 2. Gameoverscherm
 3. Bal die steeds sneller gaat
@@ -121,14 +116,12 @@ Werk de planning af van boven naar beneden. Vul de planning aan en stel bij terw
 5. Blokken die je vaker moet raken voordat ze weg zijn
 6. Blokken die van kleur veranderen
 7. Overleg met je docent voor meer uitbreidingen
-{{% /expand %}}
 
-{{% expand "Ingewikkeldere uitbreidingsstappen" %}}
+Ingewikkeldere uitbreidingsstappen
 1. Blokken die omlaag vallen als je ze raakt en "iets" opleveren als de plank ze raakt
 2. Mogelijkheid voor meerdere ballen tegelijk als een speciaal blok valt en gevangen wordt
 3. Mogelijkheid om tijdelijk blokken weg te schieten als een speciaal blok valt en gevangen wordt
 4. Overleg met je docent voor meer ingewikkeldere uitbreidingen
-{{% /expand %}}
 
 ## Uitlegvideo's
 {{<video id="PLpTljPS____idinvullen____1HC">}}

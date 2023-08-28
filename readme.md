@@ -1,7 +1,7 @@
 # assignment
 This repo startcode for computer science students of Stanislascollege Westplantsoen havo 4 and vwo 4.
 The description of the assignment can be found at
-[https://github.com/SCW-IN/hv4-game-startcode/blob/main/game.md](https://github.com/SCW-IN/hv4-game-startcode/blob/main/game.md)
+[https://github.com/SCW-IN/hv4-game-startcode/blob/main/opdracht.md](https://github.com/SCW-IN/hv4-game-startcode/blob/main/opdracht.md)
 
 # pygame with pygbag in replit - proof of concept 
 This repo runs python with pygame in the browser, using pybag to compile python to webassembly. 
