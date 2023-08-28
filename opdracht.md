@@ -84,29 +84,49 @@ Werk de planning af van boven naar beneden. Vul de planning aan en stel bij terw
     - Zet je code in de functie ...
     - Maak je plank 50 pixels hoog en 150 pixels breed
     - Gebruik de variabelen blok_x blok_y blok_w en blok_h voor de x en y van de linkerbovenhoek, de breedte en de hoogte van de plank
-4. beweeg plank
-    - Zet je code in de functie ...
+4. Beweeg plank
+    - Gebruik `pygame.key.get_pressed` om te zien welke toetsen zijn ingedrukt
     - Gebruik de toets A voor bewegen naar links en D voor bewegen naar rechts
-4. zorg dat plank niet buiten het scherm kan
-5. zorg dat de bal kaatst tegen je plank
-     - gebruik een if en pygame.Rect.collision om botsing te detecteren
-     - kaatst
-7. zorg dat je af bent als de bal de onderkant van het scherm raakt
-8. teken een blok in het veld
+4. Zorg dat plank niet buiten het scherm kan
+    - Je kunt het volgende algoritme gebruiken om boven en onder het scherm te stuiteren
+     ```
+     als de Y van de bal kleiner is dan 0
+       bal_speed_y = bal_speed_y * -1 # laat de bal de andere uit bewegen
+     anders als de Y van de bal + de hoogte van de bal groter is dan de hoogte van het scherm
+       bal_speed_y = bal_speed_y * -1 # laat de bal de andere uit bewegen
+     ```
+     - Breid je code uit zodat de bal ook links en rechts tegen de rand van het venster stuitert
+6. Zorg dat de bal kaatst tegen je plank
+     - Gebruik een `if` en `pygame.Rect.collision` om botsing te detecteren
+8. Zorg dat je af bent als de bal de onderkant van het scherm raakt
+9. Teken een blok in het veld
      - Maak het blok 50 pixels hoog en 150 pixels breed
      - Gebruik de variabelen blok_x blok_y blok_w en blok_h voor de x en y van de linkerbovenhoek, de breedte en de hoogte van het blok
-9. detecteer als je het blok raakt
-    - geef een punt als een stukje van de bal het blok raakt
-    - haal het blok weg als het geraakt is
-10. laat de bal stuiteren tegen het blok
-    - zorg dat de bal stuitert door te kijken aan welke kant het blok geraakt is
-11. maak een tweede en een derde blok
-    - verander de naam van blok_x blok_y blok_w en blok_h in blok_x0 blok_y0 blok_w0 en blok_h0
-    - gebruik de variabelen blok_x1 blok_y1 blok_w1 en blok_h1
-    - gebruik de variabelen blok_x2 blok_y2 blok_w2 en blok_h2
+10. Detecteer als je het blok raakt
+    - Gebruik een `if` en `pygame.Rect.collision` om botsing te detecteren
+    - Geef een punt als een stukje van de bal het blok raakt
+    - Haal het blok weg als het geraakt is
+11. laat de bal stuiteren tegen het blok
+    - zorg dat de bal stuitert door te kijken aan welke kant het blok geraakt is. Je kunt het volgende algoritme gebruiken.
+    ```
+    als de bal het blok raakt
+      als de bal naar boven beweegt en de bovenkant van de bal zit boven de onderkant van het blok
+        draai snelheid_y om
+      anders als de bal naar onder beweegt en de onderkant van de bal zit onder de bovenkant van het blok
+        draai snelheid_y om
+      anders als de bal naar rechts beweegt en de rechtekant van de bal zit rechts van de linkerkant van het blok
+        draai snelheid_x om
+      anders als de bal naar links beweegt en de linkerkant van de bal zit links van de rechterkant van het blok
+        draai snelheid_x om
+    ```
+12. maak een tweede en een derde blok
+    - gebruik de variabelen blok_x1 blok_y1 blok_w1 en blok_h1 voor het tweede blok
+    - gebruik de variabelen blok_x2 blok_y2 blok_w2 en blok_h2 voor het derde blok
 15. zet je code om naar array's
-    - gebruik arrays met de namen blok_x blok_y blok_w en blok_h
-17. maak een heel veld met blokken
+    - verander de blok_x blok_y blok_w en blok_h in array's, gebruik alleen het 0-de element
+    - breid de array uit met een 2e en 3e blok en voeg loops toe, zodat alle blokken uit de array worden gebruikt
+    - verwijder de oude code voor blok 2 en 3 
+17. maak een heel veld met tien of meer blokken
 
 ### Uitbreidingsstappen
 1. Uitlegscherm
