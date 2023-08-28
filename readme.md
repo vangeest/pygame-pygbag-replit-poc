@@ -3,6 +3,23 @@ This repo startcode for computer science students of Stanislascollege Westplants
 The description of the assignment can be found at
 [https://github.com/SCW-IN/hv4-game-startcode/blob/main/opdracht.md](https://github.com/SCW-IN/hv4-game-startcode/blob/main/opdracht.md)
 
+# Documentation
+- python 
+- pygame programming reference
+  https://www.pygame.org/docs/
+  
+
+# Credits
+- Game Art
+  https://opengameart.org/content/breakout-brick-breaker-tile-set-free
+- Algorithms
+  https://cs50.harvard.edu/games/2018/
+- Pygame tutorial
+  https://realpython.com/pygame-a-primer/
+- 
+  
+___
+
 # pygame with pygbag in replit - proof of concept 
 This repo runs python with pygame in the browser, using pybag to compile python to webassembly. 
 It uses replit as an IDE for editting, compiling and hosting.
@@ -48,3 +65,4 @@ It uses replit as an IDE for editting, compiling and hosting.
 
 Status: import is often succesfully completed after 1 minute, other times it takes forever.
 Work aroud: in classrooms, let students not use github. Let them fork a repl in replit, not a repo from github. For now I consider this acceptable.
+
