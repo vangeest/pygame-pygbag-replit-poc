@@ -33,8 +33,8 @@ async def main():
   #
   ball_x = 0
   ball_y = 0
-  ball_speed_x = 1
-  ball_speed_y = 1
+  ball_speed_x = 10
+  ball_speed_y = 10
 
   brick_x = [100+0*BRICK_WIDTH, 100+1*BRICK_WIDTH, 100+2*BRICK_WIDTH, 100+3*BRICK_WIDTH, 100+4*BRICK_WIDTH,
              100+0*BRICK_WIDTH, 100+1*BRICK_WIDTH, 100+2*BRICK_WIDTH, 100+3*BRICK_WIDTH, 100+4*BRICK_WIDTH]
@@ -64,6 +64,23 @@ async def main():
       ball_speed_x = ball_speed_x * -1
     if ball_y < 0 or ball_y + BALL_HEIGHT> SCREEN_HEIGHT:
       ball_speed_y = ball_speed_y * -1
+
+    # handle collision of ball with bricks
+    for i in range(0, len(brick_x)) : # TODO: do we want this? It is not typical python, but it is how it is done in Fundament
+      if ( ball_x + BALL_WIDTH > brick_x[i] and # use () to allow multiline expressions for better readability
+           ball_x < brick_x[i] + BRICK_WIDTH and
+           ball_y + BALL_HEIGHT > brick_y[i] and
+           ball_y < brick_y[i] + BRICK_HEIGHT) : # ball collides with brick
+        if ( ball_speed_x > 0 and ball_x < brick_x[i] or # right side of ball is outside brick, so ball hits left side of brick
+           ball_speed_x < 0 and ball_x + BALL_WIDTH > brick_x[i] + BRICK_WIDTH ) : # left side of ball is outside brick, so ball hits right side of brick
+          ball_speed_x = ball_speed_x * -1
+        if ( ball_speed_y > 0 and ball_y < brick_y[i] or # top side of ball is outside brick, so ball hits top side of brick
+           ball_speed_y < 0 and ball_y + BALL_HEIGHT > brick_y[i] + BRICK_HEIGHT ) : # bottom side of ball is outside brick, so ball hits bottom side of brick
+          ball_speed_y = ball_speed_y * -1
+        # remove brick by placing it outside screen
+        # TODO: really remove it, but without an error because the for-loop will go outside range
+        brick_x[i]=2000;
+        brick_y[i]=2000;
 
     # clear screen
     backgroundColor = (0, 0, 0) # black
