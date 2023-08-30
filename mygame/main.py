@@ -2,10 +2,21 @@ import asyncio
 
 import pygame
 
+# TODO: fix framerate issues
+#  framerate is determined by VSYNC (display refresh rate), 
+#  causing different speeds of the game on different systems
+#  (mac with powerplug 2xfaster then on battery)
+
+# TODO: do we move constants and images into main?
+#  it is not recommended by pygbag (don't understand why, 
+#  it has something to do with blocking code)
+#  but it does work and look easier to understand
+
 #
 # define constants 
 # constants are variables of which the value does not change
 # convention is to use uppercase for naming constants
+# TODO: do we want to keep this convention? It seems a little less readable
 #
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
@@ -13,7 +24,7 @@ BRICK_WIDTH = 96
 BRICK_HEIGHT = 32
 BALL_WIDTH = 16
 BALL_HEIGHT = 16
-PADDLE_WIDTH = 96
+PADDLE_WIDTH = 144
 PADDLE_HEIGHT = 32
 
 #
@@ -21,8 +32,11 @@ PADDLE_HEIGHT = 32
 #
 spritesheet = pygame.image.load('img/Breakout_Tile_Free.png').convert_alpha() # convert_alpha increases speed of blit and keeps transparancy of .png
 
+# TODO: do we want to use tuples?
+#  lists are less common, but are part of the Fundament course
+#  alternative with lists: brick_img = pygame.Surface([384, 128])
 brick_img = pygame.Surface((384, 128)) # create new image
-brick_img.blit(spritesheet, (0, 0), (0, 0, 384, 128)) # copy part of sheet to image
+brick_img.blit(spritesheet, (0, 0), (772, 390, 384, 128)) # copy part of sheet to image
 brick_img = pygame.transform.scale(brick_img, (BRICK_WIDTH, BRICK_HEIGHT)) # resize image
 
 ball_img = pygame.Surface((64, 64))
@@ -30,7 +44,7 @@ ball_img.blit(spritesheet, (0, 0), (1403, 652, 64, 64))
 ball_img = pygame.transform.scale(ball_img, (BALL_WIDTH, BALL_HEIGHT))
 
 paddle_img = pygame.Surface((243, 64))
-paddle_img.blit(spritesheet, (0, 0), (1158, 462, 243, 64))
+paddle_img.blit(spritesheet, (0, 0), (1158, 396, 243, 64))
 paddle_img = pygame.transform.scale(paddle_img, (PADDLE_WIDTH, PADDLE_HEIGHT))
 
 async def main():
@@ -61,7 +75,6 @@ async def main():
   #
   pygame.init()
   print('pygame.init succesfull')
-  pygame.font.init()
   font = pygame.font.SysFont('default', 64)
   screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -124,7 +137,7 @@ async def main():
       if ( ball_x + BALL_WIDTH > brick_x[i] and 
            ball_x < brick_x[i] + BRICK_WIDTH and
            ball_y + BALL_HEIGHT > brick_y[i] and
-           ball_y < brick_y[i] + BRICK_HEIGHT) : # ball collides with brick
+           ball_y < brick_y[i] + BRICK_HEIGHT ) : # ball collides with brick
         # bounce
         if ( ball_speed_x > 0 and ball_x < brick_x[i] or # right side of ball is outside brick, so ball hits left side of brick
              ball_speed_x < 0 and ball_x + BALL_WIDTH > brick_x[i] + BRICK_WIDTH ) : # left side of ball is outside brick, so ball hits right side of brick
@@ -155,13 +168,13 @@ async def main():
 
     # draw bricks
     for i in range(0, len(brick_x)) : # TODO: do we want this? It is not typical python, but it is how it is done in Fundament
-      screen.blit(brick_img, (brick_x[i], brick_y[i], BRICK_WIDTH, BRICK_HEIGHT))
+      screen.blit(brick_img, (brick_x[i], brick_y[i]))
 
     # draw ball
-    screen.blit(ball_img, (ball_x, ball_y, BALL_WIDTH, BALL_HEIGHT))
+    screen.blit(ball_img, (ball_x, ball_y))
 
     # draw paddle
-    screen.blit(paddle_img, (paddle_x, paddle_y, PADDLE_WIDTH, PADDLE_HEIGHT))
+    screen.blit(paddle_img, (paddle_x, paddle_y))
 
     # draw game status message
     game_status_img = font.render(game_status_msg, True, 'green')
